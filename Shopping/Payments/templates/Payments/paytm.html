@@ -1,0 +1,16 @@
+<html>
+<head>
+<title>Paytm Payment Page</title>
+</head>
+</body>
+<form action="https://securegw-stage.paytm.in/theia/processTransaction" method="post" name="paytm">
+{% for key,value in  parameters.items %}
+<input type="hidden" name="{{key}}" value="{{value}}">
+{% endfor %}
+</form>
+</body>
+<script>
+document.paytm.submit()
+</script>
+</html>
+
