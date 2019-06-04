@@ -17,8 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from django.views.decorators.csrf import csrf_exempt
 from Payments import views
+
+app_name = "main"
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('startpayment/',views.startpayment.as_view()),
+    #path('',views.homepage),
+    path('startpayment/',views.startpayment.as_view(),name="start"),
     path('handlerequest/',csrf_exempt(views.handle_request.as_view())),
 ]
